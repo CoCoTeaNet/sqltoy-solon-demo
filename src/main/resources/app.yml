@@ -1,0 +1,25 @@
+server.port: 8080
+
+solon.app:
+  name: 'demo-app'
+  group: 'demo'
+
+myapp:
+  db1:
+    schema: demo
+    jdbcUrl: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai&tinyInt1isBit=false
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+sqltoy:
+  # xml中的sql扫描路径
+  sqlResourcesDir: classpath:sqltoy
+  debug: true
+
+solon.logging:
+  appender:
+    console:
+      level: INFO
+    file:
+      level: INFO
