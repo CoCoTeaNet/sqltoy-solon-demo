@@ -38,7 +38,13 @@
         <dependency>
             <groupId>com.sagframe</groupId>
             <artifactId>sagacity-sqltoy-solon-plugin</artifactId>
-            <version>5.6.44</version>
+            <version>5.6.59.RC1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.f4b6a3</groupId>
+            <artifactId>ulid-creator</artifactId>
+            <version>5.2.3</version>
         </dependency>
 
         <!-- 连接池 -->
