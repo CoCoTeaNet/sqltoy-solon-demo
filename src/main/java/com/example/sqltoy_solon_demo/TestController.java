@@ -1,6 +1,7 @@
 package com.example.sqltoy_solon_demo;
 
 import com.example.sqltoy_solon_demo.pojo.SysLog;
+import com.example.sqltoy_solon_demo.pojo.UuidVerSeven;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Get;
 import org.noear.solon.annotation.Mapping;
@@ -32,6 +33,15 @@ public class TestController {
                 .setCreateTime(LocalDateTime.now())
                 .setIpAddress(context.realIp());
         return lightDao.save(sysLog);
+    }
+
+    @Get
+    @Mapping("/uuidv7")
+    public Object uuidv7() {
+        for (int i = 0; i < 50; i++) {
+            lightDao.save(new UuidVerSeven().setSort(i));
+        }
+        return "ok.";
     }
 
 }
