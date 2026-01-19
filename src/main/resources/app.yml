@@ -7,14 +7,15 @@ solon.app:
 myapp:
   db1:
     schema: demo
-    jdbcUrl: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai&tinyInt1isBit=false
+    jdbcUrl: jdbc:mysql://192.168.10.238:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai&tinyInt1isBit=false
     driverClassName: com.mysql.cj.jdbc.Driver
-    username: root
-    password: root
+    username: tester
+    password: tester
 
 sqltoy:
   # xml中的sql扫描路径
   sqlResourcesDir: classpath:sqltoy
+  typeHandler: com.example.sqltoy_solon_demo.handler.MyTypeHandler
   debug: true
 
 solon.logging:

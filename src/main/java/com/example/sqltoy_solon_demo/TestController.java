@@ -12,6 +12,8 @@ import org.sagacity.sqltoy.solon.annotation.Db;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class TestController {
@@ -20,9 +22,11 @@ public class TestController {
     private LightDao lightDao;
 
     @Get
-    @Mapping("/order/findAll")
-    public Object query() {
-        return lightDao.find("findAll", new HashMap<>());
+    @Mapping("/syslog/findAll")
+    public List<SysLog> findAll() {
+        Map<String, Object> params = new HashMap<>();
+        List<SysLog> list = lightDao.find("sys_log_find_list", params, SysLog.class);
+        return list;
     }
 
     @Get
